@@ -66,15 +66,15 @@ chgrp -R nut /etc/nut /dev/bus/usb
 chmod -R o-rwx /etc/nut
 
 # Start nut services in order
-exec /sbin/upsdrvctl start &
+exec /usr/sbin/upsdrvctl start &
 sleep 45
-/sbin/upsd
+/usr/sbin/upsd
 sleep 15
-/sbin/upsmon
+/usr/sbin/upsmon
 sleep 30
 
 # Disable UPS beep (blazer_usb)
-/bin/upscmd ups beeper.toggle &
+/usr/bin/upscmd ups beeper.toggle &
 
 
 cd /app/webNUT/webnut
